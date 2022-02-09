@@ -65,7 +65,7 @@ Widget myTextFormField(
       textInputAction: TextInputAction.done,
       cursorColor: inputTextColor,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal:20,vertical: 10),
+        contentPadding: const EdgeInsets.symmetric(horizontal:20,vertical: 10),
         suffixIcon: suffixIcon,
         focusedErrorBorder: OutlineInputBorder(
             borderSide: BorderSide(
@@ -93,4 +93,23 @@ Widget myTextFormField(
       ),
     ),
   );
+}
+
+
+Widget defaultButton({
+  required BuildContext context,
+  required Widget title,
+  required void Function() onPressed,
+
+}) {
+  return ElevatedButton(
+      style: ButtonStyle(
+          overlayColor: MaterialStateProperty.all(Theme.of(context).primaryColorDark),
+          shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(11))),
+          backgroundColor: MaterialStateProperty.all(Theme
+              .of(context)
+              .primaryColor)),
+      onPressed: onPressed,
+      child: title);
 }
