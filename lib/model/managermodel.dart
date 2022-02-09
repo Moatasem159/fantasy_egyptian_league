@@ -2,12 +2,18 @@ class ManagerModel {
   String ?firstName;
   String ?lastName;
   String ?email;
-  int ?phoneNumber;
+  String ?phoneNumber;
+  String ? password;
   String ?uId;
 
 
   ManagerModel(
-      this.firstName, this.lastName, this.email, this.phoneNumber, this.uId);
+      {this.firstName,
+      this.lastName,
+      this.email,
+      this.phoneNumber,
+      this.password,
+      this.uId});
 
   ManagerModel.fromJson(Map<String,dynamic >json){
     email=json['email'];
