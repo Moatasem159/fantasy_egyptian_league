@@ -3,11 +3,8 @@ import 'package:fantasy/assets/icons/myicons.dart';
 import 'package:fantasy/cubits/leaguecubit.dart';
 import 'package:fantasy/global/constwidget.dart';
 import 'package:fantasy/model/matchday.dart';
-import 'package:fantasy/screens/leaguetablescreen.dart';
 import 'package:fantasy/states/leaguestates.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 

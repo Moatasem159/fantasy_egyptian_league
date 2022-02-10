@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:fantasy/assets/icons/myicons.dart';
 import 'package:fantasy/screens/fantasyscreen.dart';
 import 'package:fantasy/screens/latestscreen.dart';

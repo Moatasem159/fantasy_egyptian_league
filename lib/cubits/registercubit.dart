@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fantasy/model/managermodel.dart';
 import 'package:fantasy/states/registerstates.dart';
