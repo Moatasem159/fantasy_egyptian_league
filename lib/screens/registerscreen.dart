@@ -20,7 +20,7 @@ class RegisterScreen extends StatelessWidget {
 
             if(state is CollectDataRegisterSuccessState)
               {
-                Navigator.pop(context);
+                Navigator.of(context).pop(context);
               }
 
           },

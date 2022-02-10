@@ -2,6 +2,9 @@ import 'package:fantasy/assets/icons/myicons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+
+String ?uid;
 Widget myAppBar ()=>Padding(
   padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
   child: Row(
@@ -99,17 +102,17 @@ Widget myTextFormField(
 Widget defaultButton({
   required BuildContext context,
   required Widget title,
+   Color backgroundColor=Colors.blue,
+  Color overLayColor=Colors.white12,
   required void Function() onPressed,
 
 }) {
   return ElevatedButton(
       style: ButtonStyle(
-          overlayColor: MaterialStateProperty.all(Theme.of(context).primaryColorDark),
+          overlayColor: MaterialStateProperty.all(overLayColor),
           shape: MaterialStateProperty.all(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(11))),
-          backgroundColor: MaterialStateProperty.all(Theme
-              .of(context)
-              .primaryColor)),
+          backgroundColor: MaterialStateProperty.all(backgroundColor)),
       onPressed: onPressed,
       child: title);
 }
