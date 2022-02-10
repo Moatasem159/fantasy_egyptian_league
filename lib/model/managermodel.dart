@@ -5,6 +5,9 @@ class ManagerModel {
   String ?phoneNumber;
   String ? password;
   String ?uId;
+  String ?teamName;
+  int? bank;
+  Map<String,String>? team;
 
 
   ManagerModel(
@@ -13,7 +16,11 @@ class ManagerModel {
       this.email,
       this.phoneNumber,
       this.password,
-      this.uId});
+      this.uId,
+      this.team,
+      this.bank,
+      this.teamName
+      });
 
   ManagerModel.fromJson(Map<String,dynamic >json){
     email=json['email'];
@@ -21,6 +28,8 @@ class ManagerModel {
     lastName=json['lastName'];
     phoneNumber=json['phoneNumber'];
     uId=json['uId'];
+    teamName=json['teamName'];
+    team=json['team'];
   }
 
   Map<String ,dynamic> toMap(){
@@ -30,8 +39,8 @@ class ManagerModel {
       'email':email,
       'phoneNumber':phoneNumber,
       'uId':uId,
-      // 'isEmailVerified':isEmailVerified,
-
+      'teamName':teamName,
+      'team':team,
     };
   }
 }
