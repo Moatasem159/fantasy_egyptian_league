@@ -1,6 +1,7 @@
 import 'package:fantasy/cubits/leaguecubit.dart';
 import 'package:fantasy/cubits/themescubit.dart';
 import 'package:fantasy/helper/myblocobserver.dart';
+import 'package:fantasy/helper/mysharedpreferences.dart';
 import 'package:fantasy/screens/mainscreen.dart';
 import 'package:fantasy/states/themesstates.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await MyShared.init();
   BlocOverrides.runZoned(
           () {
             runApp(const MyApp());

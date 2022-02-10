@@ -48,7 +48,7 @@ Widget myTextFormField(
       TextInputType? inputType,
     })
 {
-  double radius=12;
+  double radius=5;
   return Padding(
     padding: const EdgeInsets.only(top: 10, right: 15, left: 15),
     child: TextFormField(
@@ -113,3 +113,15 @@ Widget defaultButton({
       onPressed: onPressed,
       child: title);
 }
+
+Widget loading(){
+
+  return const Padding(
+    padding: EdgeInsets.all(8.0),
+    child: Center(child: CircularProgressIndicator(
+      strokeWidth: 3,
+    )),
+  );
+
+}
+
