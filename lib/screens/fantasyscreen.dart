@@ -1,4 +1,6 @@
 import 'package:fantasy/assets/icons/myicons.dart';
+import 'package:fantasy/helper/mysharedpreferences.dart';
+import 'package:fantasy/screens/loginscreen.dart';
 import 'package:fantasy/screens/registerscreen.dart';
 import 'package:fantasy/screens/transfersscreen.dart';
 import 'package:flutter/material.dart';
@@ -35,146 +37,148 @@ class FantasyScreen extends StatelessWidget {
                  ),),
                ),
               const SizedBox(height: 15,),
+              if(MyShared.getData(key: 'uId')==null)
               welcomeToFantasy(context: context),
-              // Column(
-              //   children: [
-              //     Padding(
-              //       padding: const EdgeInsets.symmetric(horizontal: 15),
-              //       child: Container(
-              //         width: MediaQuery.of(context).size.width-15,
-              //         height: 140,
-              //         color: Colors.blue[900],
-              //         child: Row(
-              //           crossAxisAlignment: CrossAxisAlignment.start,
-              //           mainAxisAlignment: MainAxisAlignment.center,
-              //           children: [
-              //             Padding(
-              //               padding: const EdgeInsets.symmetric(vertical: 25),
-              //               child: Column(
-              //                 children: [
-              //                   Text("0",style:GoogleFonts.copse(
-              //                     color: Colors.white,fontSize: 30
-              //                   ),),
-              //                   const SizedBox(height: 15,),
-              //                   Text(
-              //                     "AVERAGE",
-              //                     style: GoogleFonts.karla(
-              //                       color: Colors.white,
-              //                       fontSize: 20,
-              //                       fontWeight: FontWeight.bold,
-              //                     ),
-              //                   )
-              //                 ],
-              //               ),
-              //             ),
-              //             Padding(
-              //               padding: const EdgeInsets.symmetric(vertical: 25,horizontal: 10),
-              //               child: Column(
-              //                 children: [
-              //                   Text("0",style:GoogleFonts.copse(
-              //                     color: Colors.white,fontSize: 30
-              //                   ),),
-              //                   const SizedBox(height: 15,),
-              //                   Text(
-              //                     "YOUR SCORE",
-              //                     style: GoogleFonts.karla(
-              //                       fontWeight: FontWeight.bold,
-              //                         color: Colors.white, fontSize: 20),
-              //                   )
-              //                 ],
-              //               ),
-              //             ),
-              //             Padding(
-              //               padding: const EdgeInsets.symmetric(vertical: 25),
-              //               child: Column(
-              //                 children: [
-              //                   Text("0",style:GoogleFonts.copse(
-              //                     color: Colors.white,fontSize: 30
-              //                   ),),
-              //                   const SizedBox(height: 15,),
-              //                   Text(
-              //                     "HIGHEST",
-              //                     style: GoogleFonts.karla(
-              //                         fontWeight: FontWeight.bold,
-              //                         color: Colors.white, fontSize: 20),
-              //                   )
-              //                 ],
-              //               ),
-              //             ),
-              //
-              //           ],
-              //         ),
-              //
-              //       ),
-              //     ),
-              //     const SizedBox(height: 15,),
-              //     Padding(
-              //       padding: const EdgeInsets.symmetric(horizontal: 10),
-              //       child: ElevatedButton(
-              //           style:  ButtonStyle(
-              //               minimumSize: MaterialStateProperty.all(const Size(300,40)),
-              //             backgroundColor: MaterialStateProperty.all(Colors.white),
-              //             overlayColor: MaterialStateProperty.all(Colors.black38),
-              //             padding: MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 5))
-              //           ),
-              //           onPressed: () {},
-              //           child: Row(
-              //             children: [
-              //               Text(
-              //                 "Points",
-              //                 style: GoogleFonts.karla(color: Colors.black),
-              //               ),
-              //               const Spacer(),
-              //               const Icon(Icons.arrow_right_alt_sharp,color: Colors.black,),
-              //             ],
-              //           )),
-              //     ),
-              //     Padding(
-              //       padding: const EdgeInsets.symmetric(horizontal: 10),
-              //       child: ElevatedButton(
-              //           style:  ButtonStyle(
-              //               minimumSize: MaterialStateProperty.all(const Size(300,40)),
-              //             backgroundColor: MaterialStateProperty.all(Colors.white),
-              //             overlayColor: MaterialStateProperty.all(Colors.black38),
-              //             padding: MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 5))
-              //           ),
-              //           onPressed: () {},
-              //           child: Row(
-              //             children: [
-              //               Text(
-              //                 "Pick Team",
-              //                 style: GoogleFonts.karla(color: Colors.black),
-              //               ),
-              //               const Spacer(),
-              //               const Icon(Icons.arrow_right_alt_sharp,color: Colors.black,),
-              //             ],
-              //           )),
-              //     ),
-              //     Padding(
-              //       padding: const EdgeInsets.symmetric(horizontal: 10),
-              //       child: ElevatedButton(
-              //           style:  ButtonStyle(
-              //               minimumSize: MaterialStateProperty.all(const Size(300,40)),
-              //             backgroundColor: MaterialStateProperty.all(Colors.white),
-              //             overlayColor: MaterialStateProperty.all(Colors.black38),
-              //             padding: MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 5))
-              //           ),
-              //           onPressed: () {
-              //             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TransfersScreen(),));
-              //           },
-              //           child: Row(
-              //             children: [
-              //               Text(
-              //                 "Transfers",
-              //                 style: GoogleFonts.karla(color: Colors.black),
-              //               ),
-              //               const Spacer(),
-              //               const Icon(Icons.arrow_right_alt_sharp,color: Colors.black,),
-              //             ],
-              //           )),
-              //     ),
-              //   ],
-              // ),
+              if(MyShared.getData(key: 'uId')!=null)
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width-15,
+                      height: 140,
+                      color: Colors.blue[900],
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 25),
+                            child: Column(
+                              children: [
+                                Text("0",style:GoogleFonts.copse(
+                                  color: Colors.white,fontSize: 30
+                                ),),
+                                const SizedBox(height: 15,),
+                                Text(
+                                  "AVERAGE",
+                                  style: GoogleFonts.karla(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 25,horizontal: 10),
+                            child: Column(
+                              children: [
+                                Text("0",style:GoogleFonts.copse(
+                                  color: Colors.white,fontSize: 30
+                                ),),
+                                const SizedBox(height: 15,),
+                                Text(
+                                  "YOUR SCORE",
+                                  style: GoogleFonts.karla(
+                                    fontWeight: FontWeight.bold,
+                                      color: Colors.white, fontSize: 20),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 25),
+                            child: Column(
+                              children: [
+                                Text("0",style:GoogleFonts.copse(
+                                  color: Colors.white,fontSize: 30
+                                ),),
+                                const SizedBox(height: 15,),
+                                Text(
+                                  "HIGHEST",
+                                  style: GoogleFonts.karla(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white, fontSize: 20),
+                                )
+                              ],
+                            ),
+                          ),
+
+                        ],
+                      ),
+
+                    ),
+                  ),
+                  const SizedBox(height: 15,),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: ElevatedButton(
+                        style:  ButtonStyle(
+                            minimumSize: MaterialStateProperty.all(const Size(300,40)),
+                          backgroundColor: MaterialStateProperty.all(Colors.white),
+                          overlayColor: MaterialStateProperty.all(Colors.black38),
+                          padding: MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 5))
+                        ),
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Text(
+                              "Points",
+                              style: GoogleFonts.karla(color: Colors.black),
+                            ),
+                            const Spacer(),
+                            const Icon(Icons.arrow_right_alt_sharp,color: Colors.black,),
+                          ],
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: ElevatedButton(
+                        style:  ButtonStyle(
+                            minimumSize: MaterialStateProperty.all(const Size(300,40)),
+                          backgroundColor: MaterialStateProperty.all(Colors.white),
+                          overlayColor: MaterialStateProperty.all(Colors.black38),
+                          padding: MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 5))
+                        ),
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Text(
+                              "Pick Team",
+                              style: GoogleFonts.karla(color: Colors.black),
+                            ),
+                            const Spacer(),
+                            const Icon(Icons.arrow_right_alt_sharp,color: Colors.black,),
+                          ],
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: ElevatedButton(
+                        style:  ButtonStyle(
+                            minimumSize: MaterialStateProperty.all(const Size(300,40)),
+                          backgroundColor: MaterialStateProperty.all(Colors.white),
+                          overlayColor: MaterialStateProperty.all(Colors.black38),
+                          padding: MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 5))
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TransfersScreen(),));
+                        },
+                        child: Row(
+                          children: [
+                            Text(
+                              "Transfers",
+                              style: GoogleFonts.karla(color: Colors.black),
+                            ),
+                            const Spacer(),
+                            const Icon(Icons.arrow_right_alt_sharp,color: Colors.black,),
+                          ],
+                        )),
+                  ),
+                ],
+              ),
 
 
             ],
@@ -223,7 +227,10 @@ class FantasyScreen extends StatelessWidget {
                     minimumSize: MaterialStateProperty.all(const Size(300,40))
 
                 ),
-                onPressed: (){}, child: const Text("login")),
+                onPressed: (){
+
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const LoginScreen(),));
+                }, child: const Text("login")),
             ElevatedButton(
                 style:  ButtonStyle(
                     minimumSize: MaterialStateProperty.all(const Size(300,40))
